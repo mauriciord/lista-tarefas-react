@@ -19,7 +19,7 @@ renderApp(App);
 
 // HMR api
 if (module.hot) {
-  module.hot.accept('./components/App/App', () => {
+  module.hot.accept('./components/App', () => {
     renderApp(App);
   });
 }
