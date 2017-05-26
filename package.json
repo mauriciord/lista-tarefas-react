@@ -9,12 +9,19 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "moment": "^2.18.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.3",
