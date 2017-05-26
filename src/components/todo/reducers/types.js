@@ -1,0 +1,7 @@
+// types - TAREFAS
+export const ADD_TAREFA = 'ADD_TAREFA';
+export const TOGGLE_TAREFA = 'TOGGLE_TAREFA';
+
+// types - FILTRO
+export const MOSTRA_TODAS = 'MOSTRA_TODAS';
+export const SET_VISIBILIDADE_FILTRO = 'SET_VISIBILIDADE_FILTRO';
