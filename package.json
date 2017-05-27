@@ -9,7 +9,9 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "lodash": "^4.17.4",
     "moment": "^2.18.1",
+    "node-uuid": "^1.4.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
