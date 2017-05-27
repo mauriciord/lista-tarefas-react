@@ -1,7 +1,13 @@
+import { v4 } from 'node-uuid';
+import moment from 'moment';
+
 import {
   ADD_TAREFA,
-  TOGGLE_TAREFA
-} from './types';
+  TOGGLE_TAREFA,
+  MOSTRA_TODAS,
+  MOSTRA_FINALIZADAS,
+  MOSTRA_ATIVAS
+} from '../actions/types';
 
 const INITIAL_STATE = [];
 
@@ -9,14 +15,14 @@ export default (state = INITIAL_STATE, action) => {
 
   switch(action.type) {
     case ADD_TAREFA:
-      const { id, texto, data_criacao } = action.payload;
+      const texto = action.payload;
       return [ 
         ...state, 
         {
-          id,
+          id: v4(),
           texto,
           finalizada: false,
-          data_criacao
+          data_criacao: moment()
         }
       ];
     case TOGGLE_TAREFA:
