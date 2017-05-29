@@ -22,7 +22,7 @@ export default (state = INITIAL_STATE, action) => {
           id: v4(),
           texto,
           finalizada: false,
-          data_criacao: moment()
+          data_criacao: moment().toDate()
         }
       ];
     case TOGGLE_TAREFA:
