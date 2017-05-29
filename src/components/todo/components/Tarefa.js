@@ -5,7 +5,8 @@ const Tarefa = ({
   id, 
   texto,
   finalizada,
-  onClick
+  onClick,
+  onDelTarefa
 }) => {
   return(
     <li
@@ -13,6 +14,7 @@ const Tarefa = ({
       className={finalizada ? style.tarefaFeita : style.tarefaIncompleta}
     >
       {texto}
+      {' - '}<a href='#' onClick={onDelTarefa}>Excluir</a>
     </li>
   );
 };

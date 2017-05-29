@@ -1,6 +1,7 @@
 import { 
   ADD_TAREFA,
-  TOGGLE_TAREFA
+  TOGGLE_TAREFA,
+  DEL_TAREFA
 } from './types'; 
 
 export const addTarefa = (texto) => {
@@ -13,6 +14,13 @@ export const addTarefa = (texto) => {
 export const toggleTarefa = (id) => {
   return {
     type: TOGGLE_TAREFA,
+    payload: id
+  }
+};
+
+export const delTarefa = (id) => {
+  return {
+    type: DEL_TAREFA,
     payload: id
   }
 };

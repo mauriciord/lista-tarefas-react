@@ -4,7 +4,8 @@ import {
   addTarefa,
   toggleTarefa,
   filtrar,
-  ordenar
+  ordenar,
+  delTarefa
 } from '../../../actions';
 
 import Tarefa from './Tarefa';
@@ -14,6 +15,8 @@ import FiltrosLista from '../../filtros/components/FiltrosLista';
 import FiltroOrdenacao from '../../filtros/components/FiltroOrdenacao';
 
 import { filtroDeTarefas, ordenador } from '../../filtros/helpers';
+
+import styles from './TarefasApp.scss';
 
 class TarefasApp extends Component {
 
@@ -34,11 +37,17 @@ class TarefasApp extends Component {
     this.props.toggleTarefa(id);
   };
 
+  _onDelTarefa = (evt, id) => {
+    evt.preventDefault();
+    this.props.delTarefa(id);
+  };
+
   _renderTarefas = (tarefasFiltradas) => {
     return tarefasFiltradas.map( tarefa =>
       <Tarefa
         key={tarefa.id}
         onClick={(evt) => this._onClickTarefa(evt, tarefa.id)}
+        onDelTarefa={(evt) => this._onDelTarefa(evt, tarefa.id)}
         {...tarefa}
       />
     );
@@ -50,7 +59,7 @@ class TarefasApp extends Component {
       this.props.filtroVisib
     );
     return (
-      <div>
+      <div className={styles.tabelaTarefas}>
         <TarefaForm onSubmit={(texto) => this._onFormSubmit(texto)} />
 
         <FiltroOrdenacao ordenarClick={(ordenador) => this._onOrdenarClick(ordenador) } />
@@ -81,6 +90,7 @@ export default connect(
     addTarefa,
     toggleTarefa,
     filtrar,
-    ordenar
+    ordenar,
+    delTarefa
   }
 )(TarefasApp);

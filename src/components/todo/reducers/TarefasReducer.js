@@ -4,9 +4,7 @@ import moment from 'moment';
 import {
   ADD_TAREFA,
   TOGGLE_TAREFA,
-  MOSTRA_TODAS,
-  MOSTRA_FINALIZADAS,
-  MOSTRA_ATIVAS
+  DEL_TAREFA
 } from '../actions/types';
 
 const INITIAL_STATE = [];
@@ -36,6 +34,12 @@ export default (state = INITIAL_STATE, action) => {
           finalizada: !tarefa.finalizada
         };
       });
+    case DEL_TAREFA:
+      const indice = state.findIndex( x => x.id === action.payload );
+      return [
+        ...state.slice(0, indice),
+        ...state.slice(indice + 1)
+      ];
     default:
       return state;
   }
