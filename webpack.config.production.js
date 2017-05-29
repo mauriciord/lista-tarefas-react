@@ -1,9 +1,8 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-//const OfflinePlugin = require('offline-plugin');
-//const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -43,7 +42,7 @@ module.exports = {
               options: {
                 sourceMap: true,
                 modules: true,
-                importLoaders: 1,
+                importLoaders: 2,
                 localIdentName: '[name]__[local]__[hash:base64:5]',
                 url: false
               }
@@ -57,6 +56,9 @@ module.exports = {
                   ];
                 }
               }
+            },
+            {
+              loader: "sass-loader"
             }
           ]
         })
@@ -71,7 +73,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin('css/styles.[chunkhash].css'),
-//    new InlineManifestWebpackPlugin(),
+    new InlineManifestWebpackPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor', 'manifest'],
       minChunks: Infinity,
@@ -81,8 +83,7 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       },
-      template: './public/index.html'
+      template: './src/index.html'
     }),
- //   new OfflinePlugin(),
   ]
 };
