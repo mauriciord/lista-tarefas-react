@@ -9,13 +9,13 @@ const Tarefa = ({
   onDelTarefa
 }) => {
   return(
-    <li
+    <div
       onClick={onClick}
-      className={finalizada ? style.tarefaFeita : style.tarefaIncompleta}
+      className={style.tarefaLine}
     >
-      {texto}
-      {' - '}<a href='#' onClick={onDelTarefa}>Excluir</a>
-    </li>
+      <span className={finalizada ? style.tarefaFeita : style.tarefaIncompleta}>{texto}</span>
+      <a href='#' className={style.deleteBtn} onClick={onDelTarefa}>[X]</a>
+    </div>
   );
 };
 

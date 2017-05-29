@@ -1,0 +1,23 @@
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	color: #444444;
+}
+input, button, textarea {
+  font-family: inherit;
+}
+img {
+	border: none;
+	max-width: 100%;
+}
+a {
+  color: #009AE0;
+  display: inline-block;
+}

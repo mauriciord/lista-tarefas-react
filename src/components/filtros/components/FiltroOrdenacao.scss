@@ -1,0 +1,31 @@
+@import "../../../styles/_flexbox";
+
+$cor-da-borda: #F7F9FB;
+
+.ordenacaoRow {
+  @include flexbox;
+  @include justify-content(center);
+  background-color: #fff;
+  color: #000;
+  border-top:5px solid $cor-da-borda;
+  border-bottom: 5px solid $cor-da-borda;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left:10px;
+  margin-right:10px;
+
+  .ordenarLabel {
+    display: inline-block;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .ordenacaoItems {
+    width: 30%;
+    margin-left: 10px;
+    @include flexbox;
+    @include justify-content(space-around);
+
+  }
+
+}

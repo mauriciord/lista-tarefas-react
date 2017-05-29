@@ -64,9 +64,9 @@ class TarefasApp extends Component {
 
         <FiltroOrdenacao ordenarClick={(ordenador) => this._onOrdenarClick(ordenador) } />
 
-        <ul>
+        <div className={styles.tarefasBox}>
           {this._renderTarefas(tarefasFiltradas)}
-        </ul>
+        </div>
 
         <FiltrosLista filtrarClick={(filtragem) => this._onFiltroClick(filtragem)} />
 

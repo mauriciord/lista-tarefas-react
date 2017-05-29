@@ -1,7 +1,12 @@
-$cor-primaria: #FFD700;
 .tabelaTarefas {
   max-width: 900px;
   margin: 0 auto;
-  border: 3px solid $cor-primaria;
+  border: 3px solid #fff;
+  border-radius: 8px;
   background-color: #fff;
+}
+
+.tarefasBox {
+  margin-top: 1em;
+  margin-bottom: 1.3em;
 }
