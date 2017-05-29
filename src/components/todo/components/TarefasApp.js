@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 import {
   addTarefa,
   toggleTarefa,
-  filtrar
+  filtrar,
+  ordenar
 } from '../../../actions';
 
 import Tarefa from './Tarefa';
 import TarefaForm from './TarefaForm';
 
 import FiltrosLista from '../../filtros/components/FiltrosLista';
+import FiltroOrdenacao from '../../filtros/components/FiltroOrdenacao';
 
-import { filtroDeTarefas } from '../../filtros/helpers';
+import { filtroDeTarefas, ordenador } from '../../filtros/helpers';
 
 class TarefasApp extends Component {
 
@@ -21,6 +23,10 @@ class TarefasApp extends Component {
 
   _onFiltroClick = (filtro) => {
     this.props.filtrar(filtro);
+  }
+
+  _onOrdenarClick = (ordenador) => {
+    this.props.ordenar(ordenador);
   }
 
   _onClickTarefa = (evt, id) => {
@@ -40,12 +46,14 @@ class TarefasApp extends Component {
 
   render() {
     const tarefasFiltradas = filtroDeTarefas(
-      this.props.tarefas,
+      ordenador(this.props.tarefas, this.props.ordenacaoVisib),
       this.props.filtroVisib
     );
     return (
       <div>
         <TarefaForm onSubmit={(texto) => this._onFormSubmit(texto)} />
+
+        <FiltroOrdenacao ordenarClick={(ordenador) => this._onOrdenarClick(ordenador) } />
 
         <ul>
           {this._renderTarefas(tarefasFiltradas)}
@@ -59,10 +67,11 @@ class TarefasApp extends Component {
 
 }
 
-const mapStateToProps = ({ tarefas, filtroVisib }) => {
+const mapStateToProps = ({ tarefas, filtroVisib, ordenacaoVisib }) => {
   return {
     tarefas,
-    filtroVisib
+    filtroVisib,
+    ordenacaoVisib
   }
 }
 
@@ -71,6 +80,7 @@ export default connect(
   {
     addTarefa,
     toggleTarefa,
-    filtrar
+    filtrar,
+    ordenar
   }
 )(TarefasApp);
