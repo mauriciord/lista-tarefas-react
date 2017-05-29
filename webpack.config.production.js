@@ -34,7 +34,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -71,7 +71,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin('css/styles.[chunkhash].css'),
-    new InlineManifestWebpackPlugin(),
+//    new InlineManifestWebpackPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor', 'manifest'],
       minChunks: Infinity,
@@ -81,8 +81,8 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       },
-      template: './src/index.html'
+      template: './public/index.html'
     }),
-    new OfflinePlugin(),
+ //   new OfflinePlugin(),
   ]
 };
