@@ -1,7 +1,8 @@
+import orderBy from 'lodash/orderBy';
 import {
   MOSTRA_TODAS,
   MOSTRA_FINALIZADAS,
-  MOSTRA_ATIVAS
+  MOSTRA_ATIVAS,
 } from '../actions/types';
 
 export const filtroDeTarefas = (tarefas, filtroVisibilidade) => {
