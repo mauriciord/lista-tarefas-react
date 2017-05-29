@@ -18,7 +18,7 @@ module.exports = {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
     path: resolve(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: '/lista-tarefas-react/'
   },
 
   devtool: 'source-map',
