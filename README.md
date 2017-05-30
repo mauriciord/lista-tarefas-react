@@ -5,6 +5,8 @@ Lista de tarefas com opções de ordenação no topo, opções de filtragem no r
 Para marcar algo como concluído basta clicar sobre a `<div></div>`, ficando dessa maneira:
 ~~Comprar pão no mercado.~~
 
+**Demo:** [ver - GitHub Pages](https://mauriciord.github.io/lista-tarefas-react/)
+
 Uso de:
 - _`ReactJS`_
 - _`Redux`_
