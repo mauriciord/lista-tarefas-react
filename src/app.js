@@ -1,6 +1,6 @@
 'use strict'
 
-import React 'react'
+import React from 'react'
 
 const App = () => (
   <div>
