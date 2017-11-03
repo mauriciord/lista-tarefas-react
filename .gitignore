@@ -1,5 +1,7 @@
-node_modules/**/*
+dist
+node_modules
 npm-debug.log
+coverage
+storybook-static
 .DS_Store
 *.swp
-coverage
