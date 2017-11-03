@@ -1,25 +1,24 @@
-import React from 'react';
-import { render } from 'react-dom';
+'use strict'
 
-// AppContainer é um wrapper do HMR
-import { AppContainer } from 'react-hot-loader';
+import React from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import App from './app'
 
-import App from './components/App';
-
-const renderApp = Component => {
+const renderApp = (NextApp) => {
   render(
     <AppContainer>
-      <Component />
+      <NextApp />
     </AppContainer>,
-    document.querySelector('#app'),
-  );
-};
+    document.querySelector('[data-js="app"]')
+  )
+}
 
-renderApp(App);
+renderApp(App)
 
-// HMR api
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    renderApp(App);
-  });
+  module.hot.accept('./app', () => {
+    const NextApp = require('./app').default
+    renderApp(NextApp)
+  })
 }
