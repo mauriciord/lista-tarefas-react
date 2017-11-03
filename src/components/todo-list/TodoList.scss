@@ -15,6 +15,7 @@
     flex: 1;
     text-align: center;
     font-size: 2em;
+    min-width: 23px;
   }
 
   .text-container {
@@ -48,6 +49,7 @@
       color: #FFFFFF;
       font-weight: bold;
       border-radius: 4px;
+      margin-right: 0.2em;
     }
   }
 }

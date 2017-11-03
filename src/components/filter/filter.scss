@@ -1,3 +1,5 @@
+@import "../../utils/_mediaq";
+
 .filter-container {
   display: flex;
   justify-content: space-around;
@@ -6,13 +8,22 @@
   padding: 1em;
   margin: 1.2em 1.6em;
   border-radius: 6px;
+  flex-direction: column;
+  @include media(">=430px") {
+    flex-direction: row;
+  }
   
   .btn-filter {
     color: #736BD4;
-    padding: 0.25em 1em;
     border-radius: 4px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
+    padding: 1em 0.4em;
+
+    @include media(">=430px") {
+      padding: 0.25em 1em;
+    }
 
     &:hover {
       background: #847ecf;
