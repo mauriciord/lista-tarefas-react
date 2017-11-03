@@ -8,40 +8,46 @@ import {
   TOGGLE_TODO,
   DEL_TODO
 } from './actions'
+import moment from 'moment'
 
 it('should todo be a function', () => {
   expect(todo).to.be.a('function')
 })
 
 it('should add a todo item', () => {
+  const timer = moment().toDate()
   const before = deepFreeze([])
   const action = deepFreeze({
     type: ADD_TODO,
     payload: {
       id: 0,
-      text: 'Aloww'
+      text: 'Aloww',
+      created: timer
     }
   })
-  const after = [{ id: 0, text: 'Aloww', completed: false }]
+  const after = [{ id: 0, text: 'Aloww', completed: false, created: timer }]
   expect(todo(before, action)).to.be.deep.equal(after)
 })
 
 it('should add a new todo item', () => {
+  const timer = moment().toDate()
   const before = deepFreeze([{
     id: 0,
     text: 'Aloww',
-    completed: false
+    completed: false,
+    created: timer
   }])
   const action = deepFreeze({
     type: ADD_TODO,
     payload: {
       id: 1,
-      text: 'Hey'
+      text: 'Hey',
+      created: timer
     }
   })
   const after = [
-    { id: 0, text: 'Aloww', completed: false },
-    { id: 1, text: 'Hey', completed: false }
+    { id: 0, text: 'Aloww', completed: false, created: timer },
+    { id: 1, text: 'Hey', completed: false, created: timer }
   ]
   expect(todo(before, action)).to.be.deep.equal(after)
 })

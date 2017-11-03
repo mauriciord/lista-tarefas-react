@@ -1,23 +1,17 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            "> 2%",
-            "last 2 versions"
-          ]
-        },
-        "modules": false,
-        "loose": true
-      }
-    ],
-    "react",
+    "env",
+    "stage-0",
+    "react"
   ],
   "plugins": [
-    "react-hot-loader/babel",
-    "transform-class-properties",
-    "transform-object-rest-spread"
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
   ]
 }
