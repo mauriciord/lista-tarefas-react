@@ -18,31 +18,15 @@ Uso de:
 - _`Redux`_
 - _`Webpack`_ (Config: Common para configurações tanto em _Dev_ quanto em _Prod_)
 
-## Para uso
+## Scripts
 
-Na pasta raiz do projeto:
-```
-yarn install
-```
-ou
-```
-npm install
-```
-
-### Local
-```
-yarn start
-```
-ou
-```
-npm start
-```
-
-### Build
-```
-yarn build
-```
-ou
-```
-npm build
-```
+- `yarn dev (ou npm run dev)`: Inicia em ambiente _dev_
+- `yarn deploy (ou npm run deploy)`: Faz um _Build_ no projeto para produção e depois envia para Github Pages
+- `yarn test (ou npm test)`: Roda o teste uma vez
+- `yarn test:watch (ou npm run test:watch)`: Roda o teste no modo _watch_
+- `yarn build (ou npm run build)`: Faz um _Build_ no projeto para produção
+- `yarn build:analyzer (ou npm run build:analyzer)`: Faz um _Build_ no projeto para produção e abre o _bundle analyzer_ na porta `8888` 
+- `yarn storybook (ou npm run storybook)`: Roda o Storybook na porta `6006`
+- `yarn storybook:build`: Roda o Storybook para arquivos estáticos
+- `yarn update-packages`: Atualiza os pacotes/libs para as últimas versões
+- `yarn start (ou npm start)`: Mesmo que `yarn dev`
