@@ -21,7 +21,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'My app',
+    title: 'Lista de tarefas - iClinic app',
     template: join(paths.src, 'html', 'template.html')
   },
 
@@ -56,9 +56,9 @@ module.exports = {
   },
 
   cssLoader: {
-    test: /\.css$/,
+    test: /\.scss$/,
     include: paths.src,
-    use: ['style-loader', 'css-loader']
+    use: ['style-loader', 'css-loader', 'sass-loader']
   },
 
   fileLoader: {
@@ -88,6 +88,7 @@ module.exports = {
     alias: {
       src: paths.src,
       components: join(paths.src, 'components'),
+      reducers: join(paths.src, 'redux-flow', 'reducers'),
       utils: join(paths.src, 'utils')
     }
   }
