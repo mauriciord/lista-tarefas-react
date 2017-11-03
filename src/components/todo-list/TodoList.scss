@@ -1,0 +1,53 @@
+.todo-list {
+  border-bottom: 1px solid #cdf6f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1em;
+  &:first-child {
+    border-top: 1px solid #cdf6f7;
+  }
+  &:hover {
+    background: #ebf8f9;
+  }
+
+  .check-container {
+    flex: 1;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .text-container {
+    color: #000;
+    text-decoration: none;
+    flex: 10;
+    text-align: left;
+    padding: 0.25em 0.75em 0.25em 1em;
+    border-left: 1px solid #cdf6f7;
+
+    .todo-text-undone {
+      font-size: 2em;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .todo-text-done {
+      font-size: 2em;
+      text-decoration: line-through;
+      color: #CCC;
+    }
+  }
+
+  .btn-container {
+    flex: 4;
+    text-align: right;
+
+    .btn-delete {
+      background: #f32929;
+      border: none;
+      color: #FFFFFF;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+  }
+}

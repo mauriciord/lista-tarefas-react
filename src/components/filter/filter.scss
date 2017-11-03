@@ -1,0 +1,23 @@
+.filter-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ECF0F1;
+  padding: 1em;
+  margin: 1.2em 1.6em;
+  border-radius: 6px;
+  
+  .btn-filter {
+    color: #736BD4;
+    padding: 0.25em 1em;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+      background: #847ecf;
+      border-radius: 6px;
+      color: #fff;
+    }
+  }
+}
