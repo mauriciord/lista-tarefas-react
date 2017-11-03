@@ -1,6 +1,8 @@
 {
+  "homepage": "http://mauriciord.github.io/lista-tarefas-react",
   "scripts": {
     "start": "yarn dev",
+    "deploy": "npm run build && gh-pages -d dist",
     "dev": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
